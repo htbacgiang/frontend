@@ -1,10 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-  AiFillHeart,
-  AiOutlineHeart,
-  AiOutlineMessage,
-  AiOutlineShoppingCart,
-} from "react-icons/ai";
+
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { getAProduct, getAllProducts } from "../../redux/actions/product";
@@ -18,8 +13,7 @@ import "swiper/css/thumbs";
 
 // import required modules
 import { FreeMode, Navigation, Thumbs } from "swiper";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGift } from "@fortawesome/free-solid-svg-icons";
+
 import {
   addToWishlist,
   removeFromWishlist,
@@ -115,8 +109,8 @@ const ProductDetails = ({ data }) => {
 
             <Container className="mt-4">
               {/* Stack the columns on mobile by making one full-width and the other half-width */}
-              <Row>
-                <Col xs={12} md={4}>
+              <Row >
+                <Col xs={12} md={4} className="h-[100%]">
                   <Swiper
                     style={{
                       "--swiper-navigation-color": "#fff",
@@ -203,40 +197,7 @@ const ProductDetails = ({ data }) => {
                             Tình trạng: <span className=""> Còn hàng</span>{" "}
                           </p>
                           <div>
-                            <div className="weight-buttons mt-2">
-                              <button
-                                className={`weight-button ${
-                                  selectedWeight === 1 ? "active" : ""
-                                }`}
-                                onClick={() => handleWeightSelection(0.5)}
-                              >
-                                1 hộp
-                              </button>
-                              <button
-                                className={`weight-button ${
-                                  selectedWeight === 2 ? "active" : ""
-                                }`}
-                                onClick={() => handleWeightSelection(1)}
-                              >
-                                2 hộp
-                              </button>
-                              <button
-                                className={`weight-button ${
-                                  selectedWeight === 3 ? "active" : ""
-                                }`}
-                                onClick={() => handleWeightSelection(2)}
-                              >
-                               3 hộp
-                              </button>
-                              <button
-                                className={`weight-button ${
-                                  selectedWeight === 3 ? "active" : ""
-                                }`}
-                                onClick={() => handleWeightSelection(3)}
-                              >
-                                4 hộp
-                              </button>
-                            </div>
+                           
                           </div>
                           <div className="price-box">
                             <div className="special-price">
@@ -271,24 +232,6 @@ const ProductDetails = ({ data }) => {
                               </div>
                             </div>
                           </div>
-
-                          <div className="back-index">
-                            <div className="gift-list">
-                              <label className="h5">
-                                <FontAwesomeIcon icon={faGift} /> ƯU ĐÃI
-                              </label>
-                              <ul className="free-gifts">
-                                <li className="mb-3  ">
-                                  <span className="align-items-baseline  ">
-                                    <span className="mb-2">
-                                      Miễn phí vận chuyển cho đơn hàng từ
-                                      300.000đ 
-                                    </span>
-                                  </span>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
                           <Button
                             variant="success"
                             className="button"
@@ -296,6 +239,26 @@ const ProductDetails = ({ data }) => {
                           >
                             Thêm vào giỏ hàng
                           </Button>
+                          <div className="back-index">
+                            <div className="gift-list">
+                              <label className="h5">
+                                THÔNG TIN SẢN PHẨM 
+                              </label>
+                              <ul className="free-gifts">
+                                <li className="mb-3  ">
+                                  <span className="align-items-baseline  ">
+                                    <span
+                                className="content-blog"
+                                dangerouslySetInnerHTML={{
+                                  __html: data.description,
+                                }}
+                              ></span>
+                                  </span>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                         
                         </div>
                       </div>
                     </div>

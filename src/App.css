@@ -492,8 +492,8 @@ zoom: 1.1;
 }
 .price-box{
   position: relative;
-  margin: 15px 0 10px;
-  padding: 10px 16px;
+  margin: 5px 0 10px;
+  padding: 0 16px;
   background: #dbd7d700;
   border-radius: 4px;
   display: block;
@@ -869,7 +869,7 @@ zoom: 1.1;
   float: right;
 }
 .back-index{
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .trash{
   cursor: pointer;

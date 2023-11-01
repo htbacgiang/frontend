@@ -27,7 +27,6 @@ const HomePage = () => {
             }}
              > 
              <span className='section-heading'> TIỆM TRÀ AN YÊN</span>
-             
              </Link>
             <b></b>
             <p className=''>

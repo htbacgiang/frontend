@@ -63,7 +63,10 @@ const ProductCard = ({ data,isEvent }) => {
     <>
       <div className="w-full bg-white rounded-lg shadow-sm relative cursor-pointer">
         <div className="flex justify-end"></div>
-        <Link to={`${isEvent === true ? `/san-pham/${data.slug}?isEvent=true` : `/san-pham/${data.slug}`}`}>
+        <Link  
+        onClick={() => {
+          window.scroll({ top: 0, left: 0, behavior: 'smooth' });}}
+         to={`${isEvent === true ? `/san-pham/${data.slug}?isEvent=true` : `/san-pham/${data.slug}`}`}>
           <img
             src={`${backend_url}${data.images && data.images[0]}`}
             alt=""
@@ -71,7 +74,10 @@ const ProductCard = ({ data,isEvent }) => {
           />
         </Link>
        
-        <Link to={`${isEvent === true ? `/san-pham/${data.slug}?isEvent=true` : `/san-pham/${data.slug}`}`}>
+        <Link 
+        onClick={() => {
+          window.scroll({ top: 0, left: 0, behavior: 'smooth' });}}
+        to={`${isEvent === true ? `/san-pham/${data.slug}?isEvent=true` : `/san-pham/${data.slug}`}`}>
           <h4 className="font-[500] text-center mt-2 text-xl text-[orange]">
             {data.name.length > 40 ? data.name.slice(0, 40) + "..." : data.name}
           </h4>
