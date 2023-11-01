@@ -1,3 +1,3 @@
-export const server = "http://18.183.251.158/api/v2";
+export const server = "http://43.206.123.127:8080/api/v2";
 
-export const backend_url = "http://18.183.251.158/";
+export const backend_url = "http://43.206.123.127:8080/";
